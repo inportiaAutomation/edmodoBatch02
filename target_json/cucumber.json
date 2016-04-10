@@ -1,0 +1,82 @@
+[
+  {
+    "id": "user-should-be-able-to-login-into-the-system",
+    "tags": [
+      {
+        "name": "@login",
+        "line": 2
+      }
+    ],
+    "description": "",
+    "name": "User should be able to login into the system",
+    "keyword": "Feature",
+    "line": 3,
+    "elements": [
+      {
+        "id": "user-should-be-able-to-login-into-the-system;verify-if-user-can-login",
+        "tags": [
+          {
+            "name": "@login_01",
+            "line": 6
+          }
+        ],
+        "description": "",
+        "name": "Verify if user can login",
+        "keyword": "Scenario",
+        "line": 7,
+        "steps": [
+          {
+            "result": {
+              "duration": 35352747717,
+              "status": "passed"
+            },
+            "name": "when user is on login page",
+            "keyword": "Given ",
+            "line": 8,
+            "match": {
+              "location": "LoginSteps.when_user_is_on_login_page()"
+            }
+          },
+          {
+            "result": {
+              "duration": 658028893,
+              "status": "passed"
+            },
+            "name": "user clicks on login button",
+            "keyword": "And ",
+            "line": 9,
+            "match": {
+              "location": "LoginSteps.user_clicks_on_login_button()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1866017870,
+              "status": "passed"
+            },
+            "name": "user enters username and password",
+            "keyword": "When ",
+            "line": 10,
+            "match": {
+              "location": "LoginSteps.user_enters_username_and_password()"
+            }
+          },
+          {
+            "result": {
+              "duration": 18897151,
+              "status": "passed"
+            },
+            "name": "user should be on homepage",
+            "keyword": "Then ",
+            "line": 11,
+            "match": {
+              "location": "LoginSteps.user_should_be_on_homepage()"
+            }
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "Login/Login.feature"
+  }
+]
