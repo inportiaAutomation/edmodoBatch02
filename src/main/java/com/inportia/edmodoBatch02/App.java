@@ -10,7 +10,9 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions
 (
 	features = "Features",
-	glue     = "com/inportia/stepDefinitions"
+	glue     = "com/inportia/stepDefinitions",
+	tags      = "~@skip",
+    format = { "pretty", "html:target/cucumber", "json:target_json/cucumber.json"}
 )
 
 public class App 
