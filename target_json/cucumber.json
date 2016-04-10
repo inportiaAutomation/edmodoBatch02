@@ -27,11 +27,11 @@
         "steps": [
           {
             "result": {
-              "duration": 35352747717,
+              "duration": 30813593443,
               "status": "passed"
             },
             "name": "when user is on login page",
-            "keyword": "Given ",
+            "keyword": "* ",
             "line": 8,
             "match": {
               "location": "LoginSteps.when_user_is_on_login_page()"
@@ -39,11 +39,11 @@
           },
           {
             "result": {
-              "duration": 658028893,
+              "duration": 608041292,
               "status": "passed"
             },
             "name": "user clicks on login button",
-            "keyword": "And ",
+            "keyword": "* ",
             "line": 9,
             "match": {
               "location": "LoginSteps.user_clicks_on_login_button()"
@@ -51,23 +51,33 @@
           },
           {
             "result": {
-              "duration": 1866017870,
+              "duration": 1718611,
               "status": "passed"
             },
-            "name": "user enters username and password",
-            "keyword": "When ",
+            "name": "user enters \"inportia_batch01@yopmail.com\" and \"123456\"",
+            "keyword": "* ",
             "line": 10,
             "match": {
-              "location": "LoginSteps.user_enters_username_and_password()"
+              "arguments": [
+                {
+                  "val": "inportia_batch01@yopmail.com",
+                  "offset": 13
+                },
+                {
+                  "val": "123456",
+                  "offset": 48
+                }
+              ],
+              "location": "LoginSteps.user_enters_and(String,String)"
             }
           },
           {
             "result": {
-              "duration": 18897151,
+              "duration": 316910822,
               "status": "passed"
             },
             "name": "user should be on homepage",
-            "keyword": "Then ",
+            "keyword": "* ",
             "line": 11,
             "match": {
               "location": "LoginSteps.user_should_be_on_homepage()"
