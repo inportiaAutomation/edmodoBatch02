@@ -2,6 +2,7 @@ package com.inportia.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
+
 public class BasePage {
 
 public WebDriver browser;
@@ -23,16 +24,11 @@ public WebDriver browser;
 		System.out.println(browser.getCurrentUrl());
 	}
 	
-	public void closeBrowser()
-	{
-		try {
-			Thread.sleep(2);
-	    	browser.close();
-		}
-		catch(Exception ex)
-		{
-			
-		}
-	}
+	
+
+	
+	
+	
+	
 	
 }

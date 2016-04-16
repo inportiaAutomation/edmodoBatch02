@@ -35,11 +35,23 @@ public class LoginPage extends BasePage {
 		browser.findElement(username_text).sendKeys("inportia_batch01@yopmail.com");
 	}
 
+	public void enterUserName(String userName) 
+	{
+		browser.findElement(username_text).sendKeys(userName);
+	}
+
+	
 	public void enterPassword() 
 	{
 		browser.findElement(password_textbox).sendKeys("123456");
 	}
     
+	public void enterPassword(String password) 
+	{
+		browser.findElement(password_textbox).sendKeys(password);
+	}
+    
+	
 	public void click_login_submit()
 	{
 		browser.findElement(submit_button).click();
