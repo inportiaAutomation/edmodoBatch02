@@ -19,7 +19,7 @@ Scenario: Verify if user can login
 *  user should be on homepage
 
 
-@login_01 
+@login_01 @skip
 Scenario Outline: Verify if user can login
 *  when user is on login page
 *  user clicks on login button

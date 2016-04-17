@@ -9,7 +9,7 @@ Background: User logins into the system
 
 
 
-@post_01 @skip
+@post_01 
 Scenario: verify if user can post note
 * Click on the Note tab on homepage
 * Enter the note message

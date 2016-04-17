@@ -7,4 +7,14 @@ public class CommonResourceHandler {
 	{
 		return "src/test/java/com/inportia/utils/Resources/SampleUploadTextFile.txt";
 	}
+	
+	public static String getRandomString(int size)
+	{
+		return Long.toHexString(Double.doubleToLongBits(Math.random()));	
+	}
+	
+	
+	
+	
+	
 }

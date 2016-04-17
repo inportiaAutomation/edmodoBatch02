@@ -29,7 +29,10 @@ public void user_clicks_on_login_button() throws Throwable {
 
 @Given("^user enters username and password$")
 public void user_enters_username_and_password() throws Throwable {
-	
+
+	  loginPage.enterUserName();
+	  loginPage.enterPassword();
+	  loginPage.click_login_submit();
 }
 
 
