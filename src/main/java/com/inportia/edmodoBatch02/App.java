@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 (
 	features = "Features",
 	glue     = "com/inportia/stepDefinitions",
-	tags      = "~@skip",
+	tags      = { "@wip" , "~@skip" },
     format = { "pretty", "html:target/cucumber", "json:target_json/cucumber.json"}
 )
 

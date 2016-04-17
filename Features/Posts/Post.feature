@@ -9,7 +9,7 @@ Background: User logins into the system
 
 
 
-@post_01 
+@post_001 @skip
 Scenario: verify if user can post note
 * Click on the Note tab on homepage
 * Enter the note message
@@ -18,13 +18,15 @@ Scenario: verify if user can post note
 * Verify if note is send and can be seen on the homepage stream
 
 
-@post_02 @skip
-Scenario: verify if user can post Assignment
+@post_002 @wip
+Scenario: verify if user can post assignment
 * Click on the Assignment tab on homepage
-* Enter the assignment message
-* Select the recipient from the dropdown
+* Enter the Assignment title and set due date
+* Enter the Assignment description
+* Select the recipient from the dropdown for assignment
 * Send the assignment
-* Verify if assignment is send and can be seen on the homepage stream
+* Verify if note is send and can be seen on the homepage stream
+
 
 
 @post_03 @skip

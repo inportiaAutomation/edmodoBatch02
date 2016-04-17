@@ -28,6 +28,16 @@ public class HomePagePostBox extends BasePage {
 	By send_button = By.xpath(".//*[@id='postbox-note-content']/form/div[1]/a[2]"); 
 	By stream_container = By.className("stream-container");
 	
+	
+	// assignments
+	By assignment_tab = By.linkText("Assignment");
+	By assignment_title = By.name("ass-title");
+	By due_date = By.xpath(".//*[@id='postbox-assignment-content']/div[4]/input");
+	By assignment_desc = By.xpath(".//*[@id='postbox-assignment-content']/div[7]/textarea");
+    // recipient locators
+	By assignment_recipient = By.xpath(".//*[@id='postbox-assignment-content']/div[9]/div[1]");
+	By asignment_send_button = By.xpath(".//*[@id='postbox-assignment-content']/form/div[1]/a[2]");
+	
 	public void click_note_tab()
 	{
 		browser.findElement(note_link).click();;
@@ -43,10 +53,13 @@ public class HomePagePostBox extends BasePage {
 		browser.findElement(recipient_textBox).sendKeys("TestGroup-01");
 	}
 	
+	
+	
 	public void select_the_recipient_group()
 	{
 		browser.findElement(recipient_group_name).click();
 	}
+	
 	
 	public void setUploadFileWithPost()
 	{
@@ -58,17 +71,63 @@ public class HomePagePostBox extends BasePage {
 		browser.findElement(send_button).click();
 	}
 	
+
+	
+	
 	public void verify_if_note_posted(String noteMsg)
 	{
 		 System.out.println(noteMsg);
 		 
-		 //wait for the text to be present
+//		 //wait for the text to be present
 		 WebDriverWait wait = new WebDriverWait(browser,10);
 		 wait.until(ExpectedConditions.textToBePresentInElementLocated(stream_container, noteMsg) );
 		 
 		 String stream_text = browser.findElement(stream_container).getText();
+		 
+		 System.out.println(stream_text);
+		 
 		 boolean is_note_posted = stream_text.contains(noteMsg);
 		 Assert.assertTrue(is_note_posted, "Message not posted");
+	}
+	
+	
+	// actions for assignment
+	
+	public void click_assignment_tab()
+	{
+		browser.findElement(assignment_tab).click();
+	}
+	
+	
+	public void set_assignment_title(String assignmentTitle)
+	{
+	     browser.findElement(assignment_title).sendKeys(assignmentTitle);
+	}
+	
+	public void set_due_date()
+	{
+		String date = "12/12/20" + "16" ;
+		browser.findElement(due_date).sendKeys(date);
+	}
+	
+	public void set_assignment_description(String desc)
+	{
+		browser.findElement(assignment_desc).sendKeys(desc);
+	}
+	
+	public void click_send_assignment()
+	{
+		browser.findElement(asignment_send_button).click();
+	}
+	
+	public void type_recipient_group_name_assignment()
+	{
+		browser.findElement(assignment_recipient).sendKeys("TestGroup-01");
+	}
+	
+	public void select_the_recipient_group_assignment()
+	{
+		browser.findElement(recipient_group_name).click();
 	}
 	
 }
