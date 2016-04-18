@@ -1,7 +1,10 @@
 package com.inportia.pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -27,6 +30,7 @@ public class HomePagePostBox extends BasePage {
 	By recipient_group_name = By.xpath(".//*[@id='suggest-19949173']/a/span[2]");
 	By send_button = By.xpath(".//*[@id='postbox-note-content']/form/div[1]/a[2]"); 
 	By stream_container = By.className("stream-container");
+	By assignment_group_name = By.xpath(".//*[@id='suggest-19949173']/a/span[2]");
 	
 	
 	// assignments
@@ -35,8 +39,10 @@ public class HomePagePostBox extends BasePage {
 	By due_date = By.xpath(".//*[@id='postbox-assignment-content']/div[4]/input");
 	By assignment_desc = By.xpath(".//*[@id='postbox-assignment-content']/div[7]/textarea");
     // recipient locators
-	By assignment_recipient = By.xpath(".//*[@id='postbox-assignment-content']/div[9]/div[1]");
+	By assignment_recipient = By.xpath(".//*[@id='postbox-assignment-content']/div[9]/div[1]/input");
 	By asignment_send_button = By.xpath(".//*[@id='postbox-assignment-content']/form/div[1]/a[2]");
+	
+	
 	
 	public void click_note_tab()
 	{
@@ -122,12 +128,13 @@ public class HomePagePostBox extends BasePage {
 	
 	public void type_recipient_group_name_assignment()
 	{
-		browser.findElement(assignment_recipient).sendKeys("TestGroup-01");
+		List<WebElement> elem = browser.findElements(recipient_textBox);
+		elem.get(1).sendKeys("TestGroup");
 	}
 	
 	public void select_the_recipient_group_assignment()
 	{
-		browser.findElement(recipient_group_name).click();
+		browser.findElement(assignment_group_name).click();
 	}
 	
 }
