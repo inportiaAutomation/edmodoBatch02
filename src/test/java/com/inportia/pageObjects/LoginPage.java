@@ -15,7 +15,7 @@ public class LoginPage extends BasePage {
 	By login_button = By.linkText("Login");
 	By username_text = By.name("username");
 	By password_textbox = By.name("password");
-	By submit_button = By.xpath(".//*[@id='facebox']/div/table/tbody/tr/td/div[2]/form/a");
+	By submit_button = By.xpath(".//*[@id='facebox']/div/table/tbody/tr/td/div[2]/div/form/a");
 	By note_link = By.linkText("Note");
 	
 	

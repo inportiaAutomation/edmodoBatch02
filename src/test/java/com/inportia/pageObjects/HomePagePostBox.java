@@ -37,10 +37,13 @@ public class HomePagePostBox extends BasePage {
 	By assignment_tab = By.linkText("Assignment");
 	By assignment_title = By.name("ass-title");
 	By due_date = By.xpath(".//*[@id='postbox-assignment-content']/div[4]/input");
-	By assignment_desc = By.xpath(".//*[@id='postbox-assignment-content']/div[7]/textarea");
+	// recipients
+	//By assignment_desc = By.xpath(".//*[@id='postbox-assignment-content']/div[7]/textarea");
+	By assignment_desc = By.xpath("//textarea[@class='placeholder-input assignment-description-input emoji-enabled auto-enhance-url']");
+	
     // recipient locators
-	By assignment_recipient = By.xpath(".//*[@id='postbox-assignment-content']/div[9]/div[1]/input");
-	By asignment_send_button = By.xpath(".//*[@id='postbox-assignment-content']/form/div[1]/a[2]");
+	By assignment_recipient = By.xpath("//textarea[@class='postbox-send-input-container placeholder-container teacher']");
+	By asignment_send_button = By.xpath("//a[@class='postbox-send btn blue-btn']");
 	
 	
 	
