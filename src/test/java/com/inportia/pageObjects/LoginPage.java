@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import com.inportia.utils.reporting.EmailManager;
+
 public class LoginPage extends BasePage {
 
 
@@ -55,6 +57,7 @@ public class LoginPage extends BasePage {
 	public void click_login_submit()
 	{
 		browser.findElement(submit_button).click();
+		EmailManager.sendMail("Login button clicked.");
 	}
    
 	
@@ -71,7 +74,7 @@ public class LoginPage extends BasePage {
 		enterUserName();
 		enterPassword();
 		click_login_submit();
-	
+	    
 	}
 	
 }
