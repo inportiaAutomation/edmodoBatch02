@@ -3,7 +3,7 @@ package com.inportia.utils.reporting;
 
 import java.util.Properties;
 
-import javax.mail.BodyPart;
+
 
 /* 
  *  Use gmail SMTP
@@ -11,54 +11,26 @@ import javax.mail.BodyPart;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
 
 
 public class EmailManager {
     
+	
+	   static Properties mail_properties;
+       static Session getMailSession;
+	   static MimeMessage generateMailMessage;
+	 
 	   public static void sendMail(String emailtext)
 	   {
-		    // create the properties
-		    Properties props = new Properties();
-			props.put("mail.smtp.host", "smtp.gmail.com");
-			props.put("mail.smtp.socketFactory.port", "465");
-			props.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
-			props.put("mail.smtp.auth", "true");
-			props.put("mail.smtp.port", "465");
-			
-			// create the session
-			Session session = Session.getDefaultInstance(props,null);
-			Message message = new MimeMessage(session);
-			
+		 
 			try
 			{
-				
-				message.setFrom( new InternetAddress("sohail.chd14@gmail.com"));
-				message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("sohail.choudhary@edmodo.com"));
-				message.setSubject("email subject");
-				message.setText(emailtext);
-				
-				Multipart multipart = new MimeMultipart("");
-				BodyPart bodyPart = new MimeBodyPart();
-				bodyPart.setText(emailtext);
-				multipart.addBodyPart(bodyPart);
-				
-				message.setContent(multipart);
-				
-				Transport transport = session.getTransport("smtp");
-				transport.connect("smtp.gmail.com","sohail.chd14@gmail.com","Bsdlinux@123");
-				System.out.println("Transport : "+transport.toString());
-				transport.sendMessage(message, message.getAllRecipients());
-				System.out.println("Email sent to the user.");
-				
+			     email_sending_logic();	
 			}
 			catch(AddressException ex)
 			{
@@ -74,5 +46,34 @@ public class EmailManager {
 	   public static void sendMail(String subject,String content,String[] attachementList)
 	   {
 		   
+	   }
+	   
+	   static void email_sending_logic() throws MessagingException
+	   {
+		   System.out.println("setting up mail properties....");
+			 mail_properties = System.getProperties();
+			 mail_properties.put("mail.smtp.port", "587");
+			 mail_properties.put("mail.smtp.auth", "true");
+			 mail_properties.put("mail.smtp.starttls.enable", "true");
+			 mail_properties.put("mail.debug","true");
+			 System.out.println("Mail Server Properties have been setup successfully..");
+			 
+			 System.out.println("setting up mail session....");
+			 getMailSession = Session.getDefaultInstance(mail_properties, null);
+			 generateMailMessage = new MimeMessage(getMailSession);
+			 generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("sohail.choudhary@edmodo.com"));
+//			 generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress("test2@crunchify.com"));
+			 generateMailMessage.setSubject("Inportia reports");
+			 String emailBody = " Sample email from the inportia automation team. <br> Thanks";
+			 generateMailMessage.setContent(emailBody, "text/html");
+			 System.out.println("Mail Session has been created successfully..");
+			 
+			 Transport transport = getMailSession.getTransport("smtp");
+			 
+				// Enter your correct gmail UserID and Password
+				// if you have 2FA enabled then provide App Specific Password
+				transport.connect("smtp.gmail.com", "sohail.chd14@gmail.com", "Bsdlinux2123");
+				transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
+				transport.close();
 	   }
 }
