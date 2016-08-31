@@ -9,7 +9,7 @@ Background: User logins into the system
 
 
 
-@post_001 
+@post_001 @wip
 Scenario: verify if user can post note
 * Click on the Note tab on homepage
 * Enter the note message
@@ -29,7 +29,7 @@ Scenario: verify if user can post assignment
 
 
 
-@post_03 
+@post_03 @wip
 Scenario: verify if user can post note with attachment
 * Click on the Note tab on homepage
 * Enter the note message
