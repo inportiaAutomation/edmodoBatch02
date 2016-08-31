@@ -44,7 +44,7 @@ public class BrowserManager {
 	{
 		BrowserManager.is_created = true;
 		    
-		if(browserName.equalsIgnoreCase("Firefox")){
+		if(browserType.equalsIgnoreCase("Firefox")){
 		    	  DesiredCapabilities capabilities = new DesiredCapabilities();
 		    	  capabilities.setBrowserName("firefox");
 		    	  capabilities.setPlatform(org.openqa.selenium.Platform.ANY);
