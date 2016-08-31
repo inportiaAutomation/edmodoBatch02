@@ -3,7 +3,7 @@
 Feature: User should be able to login into the system 
 
 
-@login_02 @skip
+@login_02
 Scenario: login test
 *  when user is on login page
 *  user clicks on login button
@@ -11,7 +11,7 @@ Scenario: login test
 *  user should be on homepage
 
 
-@login_01 @skip
+@login_01 
 Scenario: Verify if user can login
 *  when user is on login page
 *  user clicks on login button
