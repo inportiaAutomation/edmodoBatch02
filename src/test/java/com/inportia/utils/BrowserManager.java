@@ -43,9 +43,8 @@ public class BrowserManager {
 	static WebDriver getBrowser(String browserType)
 	{
 		BrowserManager.is_created = true;
-		switch(browserType)
-		{
-		    case "Firefox":
+		    
+		if(browserName.equalsIgnoreCase("Firefox")){
 		    	  DesiredCapabilities capabilities = new DesiredCapabilities();
 		    	  capabilities.setBrowserName("firefox");
 		    	  capabilities.setPlatform(org.openqa.selenium.Platform.ANY);
@@ -56,10 +55,8 @@ public class BrowserManager {
 		    	  BrowserManager.browser.manage().window().maximize();
 		    	  BrowserManager.browser.manage().deleteAllCookies();
 		    	  BrowserManager.browser.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			      break;
-			default:
-				  break;
 		}
+		
 		
 		return BrowserManager.browser;
 	}
