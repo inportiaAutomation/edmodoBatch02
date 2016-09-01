@@ -1,9 +1,8 @@
 
-@login 
 Feature: User should be able to login into the system 
 
 
-@login_02 @wip
+@wip
 Scenario: login test
 *  when user is on login page
 *  user clicks on login button
@@ -11,7 +10,7 @@ Scenario: login test
 *  user should be on homepage
 
 
-@login_01 
+@wip
 Scenario: Verify if user can login
 *  when user is on login page
 *  user clicks on login button
@@ -19,7 +18,7 @@ Scenario: Verify if user can login
 *  user should be on homepage
 
 
-@login_01 @skip
+@wip
 Scenario Outline: Verify if user can login
 *  when user is on login page
 *  user clicks on login button
