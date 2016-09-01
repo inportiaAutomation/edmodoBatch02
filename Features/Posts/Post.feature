@@ -1,4 +1,4 @@
-@post
+
 Feature: User should be able to post on homepage
 
 
@@ -9,7 +9,7 @@ Background: User logins into the system
 
 
 
-@post_001 @wip
+@wip
 Scenario: verify if user can post note
 * Click on the Note tab on homepage
 * Enter the note message
@@ -18,7 +18,7 @@ Scenario: verify if user can post note
 * Verify if note is send and can be seen on the homepage stream
 
 
-@post_002 @wip
+@wip
 Scenario: verify if user can post assignment
 * Click on the Assignment tab on homepage
 * Enter the Assignment title and set due date
@@ -29,7 +29,7 @@ Scenario: verify if user can post assignment
 
 
 
-@post_03 @wip
+@wip
 Scenario: verify if user can post note with attachment
 * Click on the Note tab on homepage
 * Enter the note message
